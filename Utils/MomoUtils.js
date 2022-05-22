@@ -9,6 +9,7 @@ class MomoUtils {
 
     fetchTextSearch(setting) {
         return fetch(this.textSearchUrl, {
+            method: "POST",
             headers: {
                 "content-type": "application/json;",
             },
