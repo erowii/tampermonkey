@@ -3,8 +3,24 @@
  **/
 class MomoUtils {
 
-    search() {
+    constructor() {
+        this.textSearchUrl = "https://apisearch.momoshop.com.tw/momoSearchCloud/moec/textSearch";
+    }
 
+    fetchTextSearch(setting) {
+        return fetch(this.textSearchUrl, {
+            headers: {
+                "content-type": "application/json;",
+            },
+            body: JSON.stringify(setting)
+        }).then(v => v.json());
+    }
+
+    async search() {
+        let setting = this.buildSearchSetting();
+        let res = await this.fetchTextSearch();
+        console.log(res);
+        return res;
     }
 
     buildSearchSetting() {
@@ -133,3 +149,5 @@ class MomoUtils {
         return obj;
     }
 }
+
+let momoUtils = new MomoUtils();
