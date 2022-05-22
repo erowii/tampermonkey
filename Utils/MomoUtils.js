@@ -19,7 +19,7 @@ class MomoUtils {
 
     async search() {
         let setting = this.buildSearchSetting();
-        let res = await this.fetchTextSearch();
+        let res = await this.fetchTextSearch(setting);
         console.log(res);
         return res;
     }
