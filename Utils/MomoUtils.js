@@ -1,7 +1,7 @@
 /**
  * 此腳本必須在momo頁面上才能正確執行
  **/
-class Momo {
+class MomoUtils {
 
     search() {
 
@@ -133,7 +133,3 @@ class Momo {
         return obj;
     }
 }
-
-(function() {
-	window.momoUtils = new Momo();
-})
