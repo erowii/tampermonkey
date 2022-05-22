@@ -18,7 +18,11 @@ class MomoUtils {
     }
 
     async search() {
-        let setting = this.buildSearchSetting();
+        let setting = {
+            data: this.buildSearchSetting(),
+            flag: "searchEngine",
+            host: "momoshop"
+        };
         let res = await this.fetchTextSearch(setting);
         console.log(res);
         return res;
